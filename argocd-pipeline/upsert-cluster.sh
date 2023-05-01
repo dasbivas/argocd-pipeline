@@ -20,3 +20,6 @@ helm template ../environment-charts/managed-namespaces/ | kubectl apply -f -
 
 echo "Install/update ArgoCD"
 helm upgrade --version $MANAGED_ARGOCD_VERSION --install argocd ../environment-charts/managed-argocd/  -n argocd --skip-crds
+
+echo "Install remote secrets for ArgoCD"
+helm template ../files/cluster-secrets/ | kubectl apply -f -
