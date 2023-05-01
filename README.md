@@ -21,3 +21,9 @@ next time skip --skip-crds
 https://artifacthub.io/packages/helm/argo/argo-cd
 https://github.com/argoproj/argo-helm
 ```
+
+#Adding Dependency
+```
+if we update dependency then need to update
+helm dependency update
+```
