@@ -1,0 +1,9 @@
+apiVersion: v2
+name: managed-namespaces
+description: A Helm chart for installing namespaces and related objects
+version: 0.1.1
+appVersion: "v1"
+keywords: 
+  - argocd
+  - gitops
+  - namespaces

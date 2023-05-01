@@ -1,0 +1,16 @@
+apiVersion: v2
+name: managed-argocd
+description: A Helm chart for Managed ArgoCD
+version: 0.5.0
+appVersion: "2.6.7"
+icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+keywords:
+  - argoproj
+  - argocd
+  - gitops
+  - tdcnet
+dependencies:
+  - name: argo-cd
+    version: 4.6.2
+    repository: https://argoproj.github.io/argo-helm
+

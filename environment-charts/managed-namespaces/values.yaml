@@ -1,0 +1,8 @@
+foundation:
+  namespaces:
+  - name: argocd
+    networkPolicies: 
+      secure: true
+      monitored: true
+      ingressAllowed: true
+

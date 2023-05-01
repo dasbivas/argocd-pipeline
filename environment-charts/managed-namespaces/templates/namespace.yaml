@@ -1,0 +1,24 @@
+{{- range $ns := .Values.foundation.namespaces }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $ns.name }}
+{{- if hasKey $ns "labels" }}
+  labels:
+{{- toYaml $ns.labels | nindent 4 }}
+{{- end }}
+---
+{{- end }}
+
+{{- range $ns := .Values.additionalNamespaces }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ $ns.name }}
+{{- if hasKey $ns "labels" }}
+  labels:
+{{- toYaml $ns.labels | nindent 4 }}
+{{- end }}
+---
+{{- end }}
+
