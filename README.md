@@ -27,3 +27,10 @@ https://github.com/argoproj/argo-helm
 if we update dependency then need to update
 helm dependency update
 ```
+# delete resources
+```
+helm uninstall argocd -n argocd
+kubectl delete ns argocd
+kubectl delete crd applications.argoproj.io applicationsets.argoproj.io appprojects.argoproj.io
+kubectl delete -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
+```
