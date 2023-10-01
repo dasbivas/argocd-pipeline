@@ -34,3 +34,12 @@ kubectl delete ns argocd
 kubectl delete crd applications.argoproj.io applicationsets.argoproj.io appprojects.argoproj.io
 kubectl delete -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml
 ```
+```
+(
+NAMESPACE=argocd
+kubectl proxy &
+kubectl get namespace $NAMESPACE -o json |jq '.spec = {"finalizers":[]}' >temp.json
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @temp.json 127.0.0.1:8001/api/v1/namespaces/$NAMESPACE/finalize
+)
+
+```
